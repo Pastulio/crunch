@@ -1,0 +1,15 @@
+{
+  "name": "crunch",
+  "version": "0.0.1",
+  "description": "A web app to rank guild members in Crunch, a World of Warcraft guild",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pastulio/crunch.git"
+  },
+  "author": "Pastulio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pastulio/crunch/issues"
+  },
+  "homepage": "https://github.com/Pastulio/crunch"
+}

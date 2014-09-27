@@ -1,0 +1,23 @@
+{
+  "name": "crunch",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Pastulio/crunch",
+  "authors": [
+    "Pastulio <dmpastulio@gmail.com>"
+  ],
+  "description": "A web app to rank guild members in Crunch, a World of Warcraft guild",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "~3.2.0"
+  }
+}
