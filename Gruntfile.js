@@ -17,6 +17,13 @@ module.exports = function(grunt) {
             }
         },
 
+        // Bower Configuration - Installs Bower components into the lib directory
+        bower: {
+            install: {
+                //just run 'grunt bower:install' and you'll see files from your Bower packages in lib directory
+            }
+        },
+
         // Configuration for the watch task
         watch: {
             less: {
@@ -32,6 +39,7 @@ module.exports = function(grunt) {
 
     // Load Tasks
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-bower-task');
 
     // Tasks
     grunt.registerTask('default', ['less']);
