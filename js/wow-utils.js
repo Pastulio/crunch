@@ -5,20 +5,45 @@ wow.achievements = {};
 wow.crunch = {
 	ranks: [
 		{
-			rank: 3,
+			rank: 7,
+			rating: 0,
+			title: 'Barnacle'
+		},
+		{
+			rank: 6,
+			rating: 1550,
+			title: 'Sardine'
+		},
+		{
+			rank: 5,
 			rating: 1750,
 			title: 'Lobster'
 		},
 		{
-			rank: 2,
+			rank: 4,
 			rating: 2000,
 			title: 'Manta Ray'
 		},
 		{
-			rank: 1,
+			rank: 3,
 			rating: 2200,
+			title: 'Great White Shark'
+		},
+		{
+			rank: 2,
+			rating: 0,
 			title: 'Killer Whale'
-		}
+		},
+		{
+			rank: 1,
+			rating: 0,
+			title: 'Megalodon'
+		},
+		{
+			rank: 0,
+			rating: 0,
+			title: 'The Kraken'
+		},
 	]
 };
 
