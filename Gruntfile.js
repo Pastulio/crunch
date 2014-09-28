@@ -1,4 +1,8 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
+    'use strict';
+
+    require('time-grunt')(grunt);
+    require('load-grunt-tasks')(grunt);
 
     // Configuration
     grunt.initConfig({
@@ -8,12 +12,59 @@ module.exports = function(grunt) {
         less: {
             main: {
                 options: {
-                    paths: ["css"],
+                    paths: ['css'],
                     cleancss: true
                 },
                 files: {
-                    "css/main.min.css": "less/main.less"
+                    'css/main.min.css': 'less/main.less'
                 }
+            }
+        },
+        jshint: {
+            options: {
+                jshintrc: '.jshintrc',
+            },
+            all: [
+                'Gruntfile.js',
+                'js/**/*.js',
+                '!js/**/*.concat.js',
+                '!js/**/*.min.js'
+            ],
+            dev: [
+                'js/**/*.js',
+                '!js/**/*.concat.js',
+                '!js/**/*.min.js'
+            ]
+        },
+        concat: {
+            'js/<%= pkg.name %>.concat.js': [
+                'js/**/*.js',
+                '!js/**/*.concat.js',
+                '!js/**/*.min.js'
+            ]
+        },
+        uglify: {
+            compile: {
+                options: {
+                    compress: true,
+                    verbose: true
+                },
+                files: [{
+                    src: 'js/<%= pkg.name %>.concat.js',
+                    dest: 'js/<%= pkg.name %>.min.js'
+                }]
+            }
+        },
+        clean: {
+            options: {
+                'no-write': false
+            },
+            dev: {
+                src: [
+                    'css/*.min.css',
+                    'js/<%= pkg.name %>.min.js',
+                    'js/<%= pkg.name %>.concat.js'
+                ]
             }
         },
 
@@ -38,10 +89,12 @@ module.exports = function(grunt) {
     });
 
     // Load Tasks
-    grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-bower-task');
+    //grunt.loadNpmTasks('grunt-contrib-less');
+    //grunt.loadNpmTasks('grunt-bower-task');
 
     // Tasks
-    grunt.registerTask('default', ['less']);
+    grunt.registerTask('build:dev', ['clean:dev', 'less', 'jshint:dev', 'concat']);
+    grunt.registerTask('build:prod', ['clean:dev', 'less', 'jshint:all', 'concat', 'uglify']);
 
+    grunt.registerTask('default', ['build:dev']);
 };
