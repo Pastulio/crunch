@@ -17,7 +17,12 @@
     "test",
     "tests"
   ],
+  "dependencies": {
+    "angular": "1.2.22"
+  },
   "devDependencies": {
-    "bootstrap": "~3.2.0"
+    "bootstrap": "~3.2.0",
+    "angular-mocks": "1.2.22",
+    "angular-route": "1.2.22"
   }
 }

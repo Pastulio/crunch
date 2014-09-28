@@ -1,2 +1,10 @@
+.elasticbeanstalk
 bower_components
 node_modules
+public/js/vendor/
+.elasticbeanstalk/
+*.concat.js
+*.min.js
+*.concat.css
+*.min.css
+lib
